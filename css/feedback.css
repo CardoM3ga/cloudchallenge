@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('../assets/images/fundo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #0b00a5;
+    /* azul da paleta */
+}
+
+.card {
+    background: rgba(245, 241, 221, 0.95);
+    /* amarelo claro da paleta */
+    padding: 50px 40px;
+    border-radius: 25px;
+    width: 700px;
+    max-width: 95%;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    animation: slideDown 0.6s ease forwards;
+    border: 3px solid #0b00a5;
+    /* contorno azul da paleta */
+}
+
+h2 {
+    font-size: 42px;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.success {
+    color: #28a745;
+}
+
+/* verde */
+.error {
+    color: #dc3545;
+}
+
+/* vermelho */
+
+p {
+    font-size: 20px;
+    margin: 15px 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    color: #0b00a5;
+    /* azul da paleta */
+}
+
+.recurso-container {
+    margin-top: 25px;
+    width: 100%;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid #0b00a5;
+    /* azul da paleta */
+}
+
+.recurso-container iframe,
+.recurso-container video {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.button {
+    margin-top: 30px;
+    padding: 15px 35px;
+    background: #0b00a5;
+    /* azul da paleta */
+    color: #fff;
+    font-weight: 600;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.button:hover {
+    background: #2e0bff;
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   RESPONSIVIDADE RECURSO
+========================= */
+
+/* Tablets (769px - 1024px) */
+@media (max-width: 1024px) {
+  .card {
+    width: 90%;
+    padding: 40px 30px;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  .recurso-container {
+    height: 250px;
+  }
+
+  .button {
+    font-size: 16px;
+    padding: 12px 28px;
+  }
+}
+
+/* Celulares (até 768px) */
+@media (max-width: 768px) {
+  .card {
+    width: 95%;
+    padding: 30px 20px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .recurso-container {
+    height: 200px;
+  }
+
+  .button {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 0;
+  }
+}
+
+/* Telas muito pequenas (<480px) */
+@media (max-width: 480px) {
+  .card {
+    padding: 25px 15px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .recurso-container {
+    height: 150px;
+  }
+
+  .button {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+}

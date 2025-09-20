@@ -1,0 +1,350 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estrutura geral */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* menu lateral já tem o seu CSS */
+.menu_lateral {
+    width: 250px; /* ou o valor que você já usa */
+    flex-shrink: 0;
+}
+
+/* área de conteúdo */
+.content {
+    flex: 1;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* caixa das configs */
+.content_configuracoes {
+    background-color: #f1ebcf;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    max-width: 950px;
+    width: 100%;
+}
+
+/* cards dentro das configs */
+.content_configuracoes .card {
+    background: rgba(0,0,0,0.05);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+body {
+    background-color: #c1e7e7;
+    color: #333;
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+
+/* Layout geral */
+.content {
+    flex: 1;
+    padding: 25px;
+}
+
+
+
+
+/* Título principal */
+.title_config {
+    font-size: 28px;
+    font-weight: 700;
+    margin-left: 10px;
+    color: #0e28b5;
+}
+
+/* Somente engrenagem do título */
+.content_configuracoes > i {
+    font-size: 28px;
+    color: #0e28b5;
+    vertical-align: middle;
+}
+
+/* Ícone do botão logout */
+.logout i {
+    font-size: 18px;
+    color: #fff;
+}
+
+
+.sair{
+  color: white;
+}
+
+/* Seções */
+.section {
+    background-color: rgba(42, 159, 218, 0.15); /* azul clarinho translúcido */
+    border-radius: 15px;
+    padding: 20px 25px;
+    margin-top: 25px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.section h2 {
+    color: #0e28b5;
+    margin-bottom: 18px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* Opções dentro da seção */
+.options p {
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* espaço entre os itens */
+}
+
+/* Para alinhar p + botão na mesma linha (email e Google) */
+.option-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap; /* quebra em telas menores */
+}
+
+.option-row p {
+    margin: 0;
+    font-size: 16px;
+}
+
+
+/* Botões */
+/* Estilos gerais dos botões (não afeta o menu) */
+.config-btn {
+    background-color: #0e28b5;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 18px;
+    margin: 5px 0;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.config-btn:hover {
+    background-color: #08186e;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+/* Botão de sair (também nas configs) */
+.config-btn.sair {
+    background: #d62828;
+    border-radius: 10px;
+    padding: 10px 18px;
+    margin: 5px 0;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.config-btn.sair:hover {
+    background: #a71d1d;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+
+/* Switch do modo escuro */
+.modo-escuro-switch {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.modo-escuro-switch input {
+    display: none;
+}
+
+.slider {
+    position: relative;
+    width: 50px;
+    height: 26px;
+    background-color: #ccc;
+    border-radius: 26px;
+    transition: 0.3s;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+input:checked + .slider {
+    background-color: #ffffff;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+.texto {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* Botões aumentar/diminuir texto */
+.btn-text {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+/* Tablets (769px - 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .menu_lateral {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .content {
+    padding: 20px;
+    width: 95%;
+  }
+
+  .content_configuracoes {
+    padding: 25px;
+    max-width: 90%;
+    margin: 0 auto; /* Garante que o contêiner de configurações também esteja centralizado */
+  }
+
+  .section {
+    padding: 18px 20px;
+  }
+
+  .section h2 {
+    font-size: 20px;
+  }
+
+  .option-row {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .config-btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .btn-text {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+
+/* Celulares (até 768px) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .menu_lateral {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .content {
+    padding: 15px;
+    width: 100%;
+  }
+
+  .content_configuracoes {
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto; /* Garante que o contêiner de configurações também esteja centralizado */
+  }
+
+  .title_config {
+    font-size: 22px;
+  }
+
+  .section {
+    padding: 15px 18px;
+  }
+
+  .section h2 {
+    font-size: 18px;
+  }
+
+  .option-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .config-btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .btn-text {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+  }
+}
+
+/* Telas muito pequenas (<480px) */
+@media (max-width: 480px) {
+  .title_config {
+    font-size: 20px;
+  }
+
+  .section h2 {
+    font-size: 16px;
+  }
+
+  .config-btn {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  .btn-text {
+    gap: 6px;
+  }
+}

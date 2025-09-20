@@ -1,0 +1,215 @@
+body {
+    background-color: #c1e7e7;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.main {
+    flex: 1;
+    margin: 10px;
+    border-radius: 16px;
+}
+
+.aulas-container {
+    background: #f5f1dd;
+    margin: 10px;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+}
+
+.aulas-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.aulas-container h1 {
+    color: #0b00a5;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    border-bottom: 4px solid #0b00a5;
+    display: inline-block;
+    padding-bottom: 6px;
+    letter-spacing: 1px;
+}
+
+.lista-aulas {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.card-titles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0b00a5, #196185);
+    color: #fff;
+    padding: 18px 24px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 22px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.card-aula {
+    display: flex; /* Mudamos de grid para flex para ter mais controle */
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #c89c00, #e5b700);
+    color: #fff;
+    padding: 16px 24px;
+    border-radius: 40px;
+    font-weight: 500;
+    font-size: 18px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.card-aula:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+.card-aula .col {
+    font-size: 18px;
+}
+
+.card-aula .inicio {
+    font-weight: 700;
+}
+
+.col.descricao {
+    width: 400px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+/* Tablets (769px - 1024px) */
+@media (max-width: 1024px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    .aulas-container {
+        padding: 35px 25px;
+    }
+
+    .aulas-container h1 {
+        font-size: 36px;
+    }
+
+    .card-titles {
+        font-size: 20px;
+        padding: 16px 20px;
+    }
+
+    .card-aula {
+        font-size: 16px;
+        padding: 14px 20px;
+    }
+
+    .col.descricao {
+        width: 300px;
+    }
+}
+
+/* Celulares (até 768px) */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main {
+        width: 95%;
+        margin: 8px 0;
+    }
+
+    .aulas-container {
+        padding: 25px 15px;
+    }
+
+    .aulas-container h1 {
+        font-size: 28px;
+    }
+
+    .lista-aulas {
+        gap: 12px;
+    }
+
+    .card-titles, .card-aula {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 16px;
+    }
+    
+    .card-aula {
+        font-size: 16px;
+    }
+
+    .card-titles .col, .card-aula .col {
+        flex: 1;
+        font-size: 10px;
+    }
+
+    .col.descricao {
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 14px;
+        margin-left: 10px;
+    }
+    
+    .card-aula .col.inicio {
+        white-space: nowrap;
+    }
+
+}
+
+/* Telas muito pequenas (<480px) */
+@media (max-width: 480px) {
+    .aulas-container h1 {
+        font-size: 24px;
+    }
+
+    .card-titles {
+        font-size: 16px;
+        padding: 10px 12px;
+    }
+
+    .card-aula {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+
+    .col.descricao {
+        font-size: 12px;
+    }
+}

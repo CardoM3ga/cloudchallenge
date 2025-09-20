@@ -1,0 +1,55 @@
+/* Reset CSS básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+    font-size: 100%; /* 1rem = 16px padrão */
+}
+
+body {
+    font-size: 1rem; /* base de 16px */
+}
+
+/* Exemplo de texto usando rem */
+html { font-size: 100%; } /* base */
+body { font-size: 1rem; }
+h1 { font-size: 2rem; }
+p { font-size: 1rem; }
+button {  border: none; font-size: 1rem; }

@@ -1,0 +1,196 @@
+/* regra geral pra evitar corte */
+
+
+.content {
+    background: 
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), /* camada escura */
+        url('../assets/images/fundo2.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 100dvh;
+    margin: 0 auto;
+   
+}
+
+.left-side, .right-side {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.left-side {
+    padding: 20px;
+    text-align: center;
+}
+
+.subscribe{
+    width: 100%;
+    font-weight: 500;
+    color: #f8f8f8;
+}
+
+.subscribe a{
+    color: #628cff;
+}
+
+.subscribe a:hover{
+    transform: scale(1.05);
+    text-decoration: underline;
+    color: #a3c0ff;
+}
+
+.right-side {
+    padding: 20px;
+}
+
+.login-content {
+    background-color: #f8f8f8;
+    padding: 30px;
+    border-radius: 15px;
+    width: 60%;
+    margin: 20px;
+}
+
+.login-title, .login-subtitle {
+    color: #333;
+    text-align: center;
+}
+
+.login-subtitle {
+    margin-bottom: 15px;
+}
+
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+form{
+    width: 100%;
+}
+
+.input-group{
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.input-group label {
+    font-weight: 500;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.login-button {
+    width: 100%;
+    background-color: #002791;
+    padding: 10px 20px;
+    font-weight: 500;
+    color: #f8f8f8;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    transform: scale(1.05);
+    background-color: #001f6e;
+}
+
+.login-google{
+    width: 60%;
+}
+
+.login-google:hover {
+    transform: scale(1.05);
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+
+
+/* Tablets e telas mÃ©dias */
+@media (max-width: 1024px) {
+  html, body {
+    height: auto !important;
+    min-height: 100% !important;
+    overflow-y: auto !important;   /* permite scroll */
+    -webkit-overflow-scrolling: touch; /* scroll suave iOS */
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+    height: auto !important;       /* libera altura fixa */
+    min-height: auto !important;
+    overflow: visible !important;  /* deixa crescer */
+  }
+
+
+
+
+
+   .left-side, .right-side {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .login-content {
+        width: 80%;
+        margin: 15px 0;
+        padding: 25px;
+    }
+
+    .login-google {
+        width: 70%;
+    }
+
+}
+/* Celulares e telas pequenas */
+@media (max-width: 600px) {
+    .left-side, .right-side {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .login-content {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .login-title {
+        font-size: 22px;
+    }
+
+    .login-subtitle {
+        font-size: 16px;
+    }
+
+    .input-group input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .login-button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .login-google {
+        width: 90%;
+    }
+}

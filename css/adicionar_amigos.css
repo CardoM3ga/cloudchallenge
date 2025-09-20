@@ -1,0 +1,265 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #c1e7e7;
+    color: #333;
+}
+
+/* Layout geral */
+.main-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Área principal */
+.content {
+    flex: 1;
+    padding: 30px;
+}
+
+/* Card central */
+.card-container {
+    background-color: #f1ebcf;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Títulos */
+h2, h3 {
+    margin-bottom: 15px;
+    color: #0e28b5;
+}
+
+/* Formulário de busca */
+.search-form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.search-form input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #0e28b5;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+}
+
+.search-form button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #0e28b5;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 8px 8px 0;
+    transition: background 0.3s;
+}
+
+.search-form button:hover {
+    background-color: #08186e;
+}
+
+/* Linhas de usuário */
+.user-row {
+    background-color: rgba(42, 159, 218, 0.4); /* azul translúcido */
+    color: #fff; /* texto branco */
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+}
+
+.user-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.username {
+    font-weight: 600;
+    font-size: 19px;
+    color: #fff;
+}
+
+/* Badge de nível */
+.nivel {
+    font-size: 15px;
+    background-color: #0e28b5;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-weight: 500;
+    display: inline-block;
+    width: fit-content;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.user-row button {
+    padding: 6px 14px;
+    border: none;
+    background-color: #0e28b5;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.user-row button:hover {
+    background-color: #08186e;
+}
+
+/* Mensagem de vazio */
+.resultados p, .pendentes p {
+    color: #555;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* HR estilizado */
+hr {
+    margin: 25px 0;
+    border: 0;
+    height: 2px;
+    background-color: #0e28b5;
+    opacity: 0.3;
+    border-radius: 2px;
+}
+
+/* ===== Responsividade ===== */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .card-container {
+        padding: 20px;
+    }
+
+    .search-form input[type="text"] {
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .search-form button {
+        padding: 8px 12px;
+        font-size: 16px;
+    }
+
+    .user-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .user-info {
+        gap: 10px;
+    }
+
+    .username {
+        font-size: 17px;
+    }
+
+    .nivel {
+        font-size: 14px;
+        padding: 2px 6px;
+    }
+
+    .user-row button {
+        width: 100%;
+        padding: 8px;
+    }
+}
+
+/* Celulares (até 767px) */
+@media (max-width: 767px) {
+    .content {
+        padding: 15px;
+        width: 95%;
+    }
+
+    .card-container {
+        padding: 15px;
+    }
+
+    .search-form {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .search-form input[type="text"], 
+    .search-form button {
+        width: 100%;
+    }
+
+    .user-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .user-info {
+        gap: 8px;
+    }
+
+    .avatar {
+        width: 40px;
+        height: 40px;
+    }
+
+    .username {
+        font-size: 16px;
+    }
+
+    .nivel {
+        font-size: 13px;
+        padding: 2px 5px;
+    }
+
+    .user-row button {
+        width: 100%;
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+
+    h2, h3 {
+        font-size: 1.3em;
+    }
+
+    hr {
+        margin: 20px 0;
+    }
+}

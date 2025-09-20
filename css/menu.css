@@ -1,0 +1,297 @@
+.side-menu{
+    width: 20%;
+    height: 100%;
+    margin: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2aa0da;
+    font-size: large;
+    color: white;
+    font-weight: 500;
+    border-radius: 16px;
+}
+
+.top, .bot, .mid {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+span{
+    margin: 10px;
+    cursor: pointer;
+}
+
+.menu-item{
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+button {
+    color: white;
+}
+
+button:hover{
+    color: #b7d4ff;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.play{
+    width: 100%;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: #000;
+    font-size: 22px;
+}
+
+.play:hover{
+    background-color: #c7c7c7;
+    color: #0066ff;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+i {
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.divider{
+    width: 80%;
+    height: 1px;
+    background-color: rgb(73, 73, 73);
+    margin: 20px 0;
+}
+
+.perfil-usuario {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background 0.3s;
+}
+
+.perfil-usuario:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.avatar-usuario {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    margin-bottom: 8px;
+}
+
+.nome-usuario {
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Modal */
+.modal-modos {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background: rgba(0,0,0,0.85);
+    font-family: 'Poppins', sans-serif;
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.modal-content-modos {
+    background: linear-gradient(145deg, #ffefba, #ffffff);
+    margin: 8% auto; 
+    padding: 40px 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    transform: translateY(-50px);
+    animation: slideDown 0.4s ease forwards;
+}
+
+.modal-content-modos h2 {
+    margin-bottom: 25px;
+    font-size: 24px;
+    color: #2c0b6b;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.modes .btn-modal-modos {
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 17px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #5c00ff, #0b00a5);
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: 0.3s all;
+}
+
+.modes .btn-modal-modos:hover {
+    background: linear-gradient(135deg, #0b00a5, #5c00ff);
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #ff1e00;
+    transition: 0.2s;
+}
+
+.close:hover {
+    transform: rotate(90deg);
+    color: #ff6e4a;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slideDown {
+    from {opacity: 0; transform: translateY(-50px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* Hamburger button - só aparece em telas pequenas */
+.hamburger {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 28px;
+    color: #fff;
+    z-index: 1001;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.hamburger:hover {
+    transform: scale(1.1);
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+/* Tablets e celulares (até 1025px) */
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 1025px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main {
+        width: 95%;
+        padding: 10px;
+    }
+
+    /* Oculta o menu lateral em telas menores */
+    .side-menu {
+        position: fixed;
+        top: 0;
+        left: -260px; /* Escondido fora da tela */
+        width: 240px;
+        height: 100%;
+        z-index: 1000;
+        overflow-y: auto;
+    }
+
+    /* Move o menu lateral para dentro da tela quando a classe 'active' é adicionada */
+    .side-menu.active {
+        left: 0;
+    }
+
+    /* Mostra o botão de hambúrguer */
+    .hamburger {
+        display: block;
+        position: fixed; /* Garante que o botão fique visível */
+        top: 20px;
+        left: 20px;
+        color: #0b00a5;
+        z-index: 1001;
+    }
+}
+
+/* Celulares (até 768px) */
+@media (max-width: 768px) {
+    /* Ajustes específicos para telas menores */
+    .banner {
+        height: 220px;
+        padding-bottom: 10px;
+    }
+
+    .side-menu {
+        position: fixed;
+        top: 0;
+        left: -260px; /* Escondido fora da tela */
+        width: 240px;
+        height: 100%;
+        z-index: 1000;
+        transition: left 0.3s ease;
+        overflow-y: auto;
+    }
+    
+    .side-menu.active {
+        left: 0;
+    }
+
+    .hamburger {
+        display: block;
+        color: #0b00a5; /* Muda a cor do ícone */
+        z-index: 1001; /* Garante que o ícone esteja acima do menu */
+        left: 20px; /* Posição para telas menores */
+        top: 20px;
+    }
+}
+
+/* Telas muito pequenas (até 600px) */
+@media (max-width: 600px) {
+    .banner {
+        height: 200px;
+        padding-bottom: 10px;
+    }
+    
+    .produto {
+        width: 90%;
+        margin-left: 0;
+    }
+
+    .login-content, .quiz-container, .final-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+}

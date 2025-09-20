@@ -1,0 +1,440 @@
+/* =========================
+   RESET BÁSICO
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #c1e7e7;
+    color: #333;
+}
+
+/* =========================
+   BANNER DO PÓDIO
+========================= */
+.banner {
+    background: url('../assets/images/img_home.png') no-repeat center center;
+    background-size: cover;
+    width: 95%;
+    height: 320px;
+    border-radius: 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 0 auto 40px auto;
+    padding-bottom: 15px;
+}
+
+/* =========================
+   CONTAINER PRINCIPAL
+========================= */
+.content {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* =========================
+   PÓDIO
+========================= */
+.podium-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Alinha os itens pela base */
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.jogador-podio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.info-jogador {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: 8px;
+    padding: 4px 8px;
+    margin-top: 6px;
+    max-width: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 14px;
+}
+
+.jogador-podio .icone-jogador {
+    position: relative;
+}
+
+/* Avatar padrão */
+.jogador-podio .icone-jogador img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Bordas conforme posição */
+.borda-ouro {
+    border: 3px solid #FFD700;
+    background-color: rgb(255, 255, 255);
+}
+
+.borda-prata {
+    border: 3px solid #C0C0C0;
+    background-color: rgb(255, 255, 255);
+}
+
+.borda-bronze {
+    border: 3px solid #CD7F32;
+    background-color: rgb(255, 255, 255);
+}
+
+.jogador-podio .fa-crown {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+}
+
+/* =========================
+   CORES DAS COROAS
+========================= */
+.coroa-ouro {
+    color: #FFD700;
+}
+
+.coroa-prata {
+    color: #C0C0C0;
+}
+
+.coroa-bronze {
+    color: #CD7F32;
+}
+
+/* Diferenciação de tamanho por posição */
+.jogador-podio.pos-0 {
+    transform: scale(1.2);
+}
+
+.jogador-podio.pos-1 {
+    transform: scale(1);
+}
+
+.jogador-podio.pos-2 {
+    transform: scale(0.9);
+}
+
+.nome-jogador {
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+.pontos-jogador {
+    font-size: 14px;
+    color: #cccccc;
+}
+
+/* =========================
+   DIVISÓRIA
+========================= */
+hr {
+    margin: 30px 0;
+    border: none;
+    border-top: 1px solid #ffffff;
+}
+
+/* =========================
+   HISTÓRICO DE PARTIDAS
+========================= */
+.matches-container {
+    max-width: 95%;
+    margin: 0 auto 40px auto;
+    background-color: rgba(241, 235, 207);
+    padding: 40px;
+    border-radius: 40px;
+    text-align: center;
+}
+
+.matches-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ajuste aqui */
+    margin-bottom: 20px;
+}
+
+.matches-header h2 {
+    font-weight: 900;
+    color: #0e28b5;
+    font-size: 2.5rem;
+    margin: 0;
+    flex: 1; /* Permite que o título ocupe o espaço restante */
+    text-align: center;
+}
+
+.matches-header hr {
+    width: 30%;
+    margin: 10px auto 30px auto;
+    border: none;
+    height: 7px;
+    background-color: #0e28b5;
+    border-radius: 50px;
+}
+
+.matches-header .btn-friends {
+    position: static; /* Ajuste aqui */
+    right: 0;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.btn-friends {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 22px;
+    background-color: #f1c40f88;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+}
+
+.btn-friends:hover {
+    background-color: #d4ac0d;
+}
+
+/* Cores do placar */
+.match.win .score {
+    background-color: #0e28b5;
+    color: #d6e1ff;
+}
+
+.match.lose .score {
+    background-color: #e74c3c;
+    color: #ffd6d6;
+}
+
+.match.draw .score {
+    background-color: #7f8c8d;
+    color: #eeeeee;
+}
+
+.matches .match {
+    display: grid;
+    grid-template-columns: minmax(100px, 1fr) auto auto;
+    align-items: center;
+    padding: 10px 25px;
+    margin-bottom: 10px;
+    border-radius: 35px;
+    background-color: #2a9fda65;
+    gap: 20px;
+}
+
+/* nome sempre à esquerda */
+.match .user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-self: start;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.match .user img.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.match .user span {
+    font-weight: 600;
+}
+
+/* placar centralizado */
+.match .score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100px;
+    font-weight: 700;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+/* botão sempre à direita */
+.match .btn-play {
+    justify-self: end;
+    padding: 5px 12px;
+    border: none;
+    border-radius: 15px;
+    background-color: #414b88;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+}
+
+.btn-play:hover {
+    background-color: #292f53;
+}
+
+/* =========================
+   RESPONSIVIDADE PÓDIO E HISTÓRICO
+========================= */
+/* Tablets (769px - 1024px) */
+@media (max-width: 1024px) {
+    .podium-container{
+      display: none;
+    }
+
+    .banner {
+        height: 250px;
+        padding-bottom: 10px;
+    }
+
+    .jogador-podio .icone-jogador img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .info-jogador {
+        font-size: 13px;
+        max-width: 120px;
+    }
+
+    .matches-header h2 {
+        font-size: 2rem;
+    }
+
+    .match .score {
+        font-size: 14px;
+        min-width: 80px;
+    }
+
+    .btn-play {
+        font-size: 14px;
+        padding: 4px 10px;
+    }
+}
+
+/* Celulares (até 768px) */
+@media (max-width: 768px) {
+    .podium-container {
+      display: none;
+  }
+
+    .banner {
+        height: 200px;
+        padding-bottom: 8px;
+    }
+
+    .podium-container {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+    
+    .matches-header {
+        flex-direction: column; /* Organiza em coluna */
+        gap: 8px;
+    }
+
+    .matches-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .matches-header .btn-friends {
+        position: static;
+    }
+
+    .jogador-podio .icone-jogador img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .info-jogador {
+        font-size: 12px;
+        max-width: 100px;
+    }
+
+    .matches .match {
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+    }
+
+    .match .user {
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+
+    .match .score {
+        font-size: 13px;
+        min-width: 70px;
+        justify-self: start;
+    }
+
+    .btn-play {
+        font-size: 13px;
+        padding: 4px 8px;
+        justify-self: end;
+    }
+}
+
+/* Telas muito pequenas (<480px) */
+@media (max-width: 480px) {
+    .banner {
+        height: 150px;
+        padding-bottom: 6px;
+    }
+
+    .jogador-podio .icone-jogador img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .info-jogador {
+        font-size: 9px;
+        max-width: 80px;
+    }
+
+    .matches-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .matches .match {
+        gap: 4px;
+    }
+
+    .match .score {
+        font-size: 12px;
+        min-width: 60px;
+    }
+
+    .btn-play {
+        font-size: 12px;
+        padding: 3px 6px;
+    }
+}

@@ -1,0 +1,116 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #c1e7e7; /* azul claro CloudChallenge */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.card {
+    background: #f5f1dd;
+    border-radius: 20px;
+    padding: 40px 30px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    animation: slideDown 0.5s ease forwards;
+}
+
+.img-logo {
+    width: 350px;
+}
+
+.card #pin {
+    font-size: 48px;
+    color: #ff9900;
+    font-weight: 700;
+    display: block;
+    margin: 15px 0;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+}
+
+#status {
+    font-size: 20px;
+    color: #0b00a5;
+    font-weight: 600;
+    margin-top: 20px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes slideDown {
+    from {opacity: 0; transform: translateY(-50px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+/* =========================
+   RESPONSIVIDADE PIN
+========================= */
+
+/* Tablets (769px - 1024px) */
+@media (max-width: 1024px) {
+  .card {
+    padding: 30px 25px;
+    max-width: 450px;
+  }
+
+  .img-logo {
+    width: 280px;
+  }
+
+  .card #pin {
+    font-size: 40px;
+  }
+
+  #status {
+    font-size: 18px;
+  }
+}
+
+/* Celulares (até 768px) */
+@media (max-width: 768px) {
+  .card {
+    padding: 25px 20px;
+    max-width: 90%;
+  }
+
+  .img-logo {
+    width: 220px;
+  }
+
+  .card #pin {
+    font-size: 36px;
+  }
+
+  #status {
+    font-size: 16px;
+  }
+}
+
+/* Telas muito pequenas (<480px) */
+@media (max-width: 480px) {
+  .card {
+    padding: 20px 15px;
+  }
+
+  .img-logo {
+    width: 180px;
+  }
+
+  .card #pin {
+    font-size: 30px;
+  }
+
+  #status {
+    font-size: 14px;
+  }
+}

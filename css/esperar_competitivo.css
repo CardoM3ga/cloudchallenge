@@ -1,0 +1,157 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #c1e7e7, #f5f1dd);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #0b00a5;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #0014a5;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+
+#status {
+    font-size: 20px;
+    margin-top: 20px;
+    text-align: center;
+    color: #2aa0da;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+}
+
+.spinner {
+    width: 100px;
+    height: 100px;
+    border: 12px solid rgba(42, 160, 218, 0.3);
+    border-top: 12px solid #0070a8;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 0 20px rgba(0,112,168,0.4);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.container {
+    text-align: center;
+    background: rgba(245,241,221,0.9);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    animation: slideDown 0.6s ease forwards;
+    max-width: 500px;
+}
+
+.note {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #060055;
+    font-weight: 500;
+}
+
+/* Animação suave do container */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================
+   RESPONSIVIDADE LOADING
+========================= */
+
+/* Tablets (769px - 1024px) */
+@media (max-width: 1024px) {
+  body {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  #status {
+    font-size: 18px;
+  }
+
+  .spinner {
+    width: 80px;
+    height: 80px;
+    border-width: 10px;
+  }
+
+  .container {
+    max-width: 400px;
+    padding: 30px 20px;
+  }
+
+  .note {
+    font-size: 15px;
+  }
+}
+
+/* Celulares (até 768px) */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  #status {
+    font-size: 16px;
+  }
+
+  .spinner {
+    width: 70px;
+    height: 70px;
+    border-width: 8px;
+  }
+
+  .container {
+    max-width: 90%;
+    padding: 25px 15px;
+  }
+
+  .note {
+    font-size: 14px;
+  }
+}
+
+/* Telas muito pequenas (<480px) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  #status {
+    font-size: 14px;
+  }
+
+  .spinner {
+    width: 60px;
+    height: 60px;
+    border-width: 6px;
+  }
+
+  .container {
+    padding: 20px 12px;
+  }
+
+  .note {
+    font-size: 13px;
+  }
+}

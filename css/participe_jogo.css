@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #c1e7e7;
+    display: flex;
+}
+
+.conteudo {
+    flex: 1;
+    padding: 20px;
+    background: #f5f1dd;
+    border-radius: 12px;
+    margin: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.top-banner {
+    background: url('../assets/images/fundoJogueComAmigo.png') no-repeat center;
+    background-size: cover;
+    height: 50%;
+    border-radius: 12px;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.btn-criar {
+    background: linear-gradient(135deg, #0070a8, #2aa0da);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+}
+
+.btn-criar:hover {
+    transform: scale(1.08);
+    background: linear-gradient(135deg, #005c88, #1c8cc0);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.area-pin {
+    background-color: rgba(42, 159, 218, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    margin-top: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.area-pin h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #0070a8;
+}
+
+.input-pin {
+    width: 70%;
+    padding: 14px;
+    border-radius: 25px;
+    border: 2px solid #003047ff;
+    background: #fff;
+    color: #333;
+    font-size: 18px;
+    text-align: center;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-pin:focus {
+    border-color: #2aa0da;
+    box-shadow: 0 0 8px rgba(42, 160, 218, 0.5);
+}
+
+.btn-conectar {
+    margin-top: 25px;
+    background: linear-gradient(135deg, #2aa0da, #0070a8);
+    color: white;
+    border: none;
+    padding: 14px 36px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+}
+
+.btn-conectar:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #1c8cc0, #005c88);
+}
+
+.pin-gerado {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+/* Ajuste fino: melhorar tamanho do form e botões em telas pequenas */
+@media (max-width: 600px) {
+    .area-pin {
+        width: 100%;
+        padding: 28px 22px; /* aumenta o respiro */
+        border-radius: 18px;
+    }
+
+    .area-pin h2 {
+        font-size: 26px; /* título maior */
+    }
+
+    .input-pin {
+        width: 95%;       /* ocupa mais espaço */
+        font-size: 17px;  /* texto maior */
+        padding: 16px;    /* mais altura */
+    }
+
+    .btn-conectar {
+        width: 100%;
+        padding: 16px 0;  /* botão mais alto */
+        font-size: 18px;  /* fonte maior */
+        border-radius: 30px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .area-pin {
+        padding: 25px;
+    }
+
+    .btn-criar,
+    .btn-conectar {
+        min-width: 230px; /* botões mais largos */
+        font-size: 17px;
+        padding: 14px 0;
+    }
+}

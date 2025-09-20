@@ -1,0 +1,244 @@
+body{
+    background-color: #c1e7e7;
+}
+
+.content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.main {
+    width: 80%;
+    height: 100%;
+    margin: 10px;
+    padding: 30px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f1dd;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    color: #0014a5;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.ranking-buttons {
+    margin: 0 auto 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.ranking-buttons button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 30px;
+    background: #bdbdbd;
+    cursor: pointer;
+    font-weight: 600;
+    color: #fff;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.ranking-buttons button.active {
+    background: #00a5ff;
+}
+
+.ranking-buttons button:hover {
+    opacity: 0.8;
+}
+
+.ranking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.ranking-list.hidden {
+    display: none;
+}
+
+.ranking-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    padding: 12px 20px;
+    border-radius: 40px;
+    background: #b9e2eb;
+    transition: 0.2s;
+    font-size: 16px;
+}
+
+.ranking-item:hover {
+    background: #a6d7e1;
+}
+
+.ranking-item.me {
+    background: #0b00a5;
+    color: white;
+    font-weight: 600;
+}
+
+.ranking-item .pos {
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.ranking-item .nome {
+    flex: 1;
+    font-weight: 500;
+}
+
+.ranking-item .score {
+    font-weight: 600;
+}
+
+/* Medalhas para top 3 */
+.ranking-item.top1 .pos {
+    background: gold;
+    color: #000;
+}
+
+.ranking-item.top2 .pos {
+    background: silver;
+    color: #000;
+}
+
+.ranking-item.top3 .pos {
+    background: #cd7f32; /* bronze */
+    color: #fff;
+}
+
+.ranking-item .avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid #fff;
+}
+
+.divider_ranking{
+    width: 20%;
+    margin: 0 auto;
+    height: 3px;
+    background-color: #0014a5;
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+/* Tablets e telas médias */
+@media (max-width: 1024px) {
+    .content {
+        flex-direction: column;
+        align-items: center; /* centraliza no meio */
+    }
+
+    .main {
+        width: 95%;
+        padding: 20px;
+        margin: 0 auto; /* centraliza */
+    }
+
+    .ranking-buttons {
+        flex-wrap: wrap;
+    }
+
+    .ranking-item {
+        flex-direction: row; /* mantém lado a lado */
+        align-items: center;
+        gap: 8px;
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .ranking-item .nome {
+        flex: 1;
+        white-space: normal; /* deixa quebrar linha */
+        word-break: break-word; /* quebra palavras grandes */
+    }
+
+    .ranking-item .pos {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .ranking-item .avatar {
+        width: 36px;
+        height: 36px;
+    }
+
+    .divider_ranking {
+        width: 40%;
+    }
+}
+
+/* Celulares e telas pequenas */
+@media (max-width: 600px) {
+    .ranking-buttons {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .main {
+        width: 95%;
+        margin: 0 auto; /* centraliza */
+    }
+
+    .ranking-item {
+        font-size: 13px;
+        padding: 8px 12px;
+        flex-direction: row; /* mantém em linha */
+        align-items: center;
+        gap: 6px;
+    }
+
+    .ranking-item .nome {
+        flex: 1;
+        font-size: 12px;
+        white-space: normal; /* permite quebra */
+        word-break: break-word;
+    }
+
+    .ranking-item .pos {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .ranking-item .avatar {
+        width: 32px;
+        height: 32px;
+    }
+
+    .divider_ranking {
+        width: 60%;
+    }
+}

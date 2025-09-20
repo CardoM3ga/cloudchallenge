@@ -1,0 +1,269 @@
+.content {
+    background: 
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), /* camada escura */
+        url('../assets/images/fundo.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+   
+}
+
+.left-side, .right-side {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.left-side {
+    padding: 20px;
+    text-align: center;
+}
+
+.subscribe{
+    width: 100%;
+    font-weight: 500;
+    color: #f8f8f8;
+}
+
+.subscribe a{
+    color: #628cff;
+}
+
+.subscribe a:hover{
+    transform: scale(1.05);
+    text-decoration: underline;
+    color: #a3c0ff;
+}
+
+.right-side {
+    padding: 20px;
+}
+
+.login-content {
+    background-color: #f8f8f8;
+    padding: 30px;
+    border-radius: 15px;
+    width: 60%;
+    margin: 20px;
+}
+
+.login-title, .login-subtitle {
+    color: #333;
+    text-align: center;
+}
+
+.login-subtitle {
+    margin-bottom: 15px;
+}
+
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+form{
+    width: 100%;
+}
+
+.input-group{
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.input-group label {
+    font-weight: 500;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.login-button {
+    width: 100%;
+    background-color: #002791;
+    padding: 10px 20px;
+    font-weight: 500;
+    color: #f8f8f8;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    transform: scale(1.05);
+    background-color: #001f6e;
+}
+
+.login-google{
+    width: 60%;
+}
+
+.login-google:hover {
+    transform: scale(1.05);
+}
+
+/* =========================
+   RESPONSIVIDADE LOGIN
+========================= */
+
+/* Tablets (até 1024px) */
+/* Melhorar alinhamento e espaçamento no mobile */
+/* Mantém o layout antigo por padrão */
+/* Seu CSS atual continua valendo */
+
+/* =========================
+   SOMENTE MOBILE SIMPLIFICADO
+========================= */
+@media (max-width: 768px) {
+  /* Remove o lado esquerdo (logo e texto) */
+  .left-side {
+    display: none;
+  }
+
+  /* Centraliza só o formulário */
+  .content {
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .right-side {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .login-content {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    margin: 0;
+  }
+
+  /* Botões e inputs ocupando largura total */
+  .login-form,
+  .input-group,
+  .login-button,
+  .login-google {
+    width: 100%;
+  }
+
+  /* Cadastrar-se abaixo do form */
+  .subscribe {
+    margin-top: 15px;
+    text-align: center;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .login-content {
+    margin: 0 10px; /* espaço lateral pra não encostar na borda */
+  }
+
+  .input-group input {
+    font-size: 0.9rem; /* letras mais ajustadas em celulares pequenos */
+  }
+
+  .login-button {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+
+
+/* =========================
+   MOBILE E TABLETS MÉDIOS
+========================= */
+@media (max-width: 1024px) {
+  /* some com a logo em tablets e mobile */
+  .left-side {
+    display: none;
+  }
+
+  .content {
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .right-side {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .login-content {
+    width: 100%;
+    max-width: 400px; /* limita pra não estourar */
+    padding: 20px;
+    margin: 0;
+    text-align: center; /* centraliza título e subtítulo */
+  }
+
+  /* garante que o título nunca quebre a caixa */
+  .login-title {
+    font-size: 1.8rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .login-subtitle {
+    font-size: 1rem;
+  }
+
+  /* inputs e botões 100% */
+  .login-form,
+  .input-group,
+  .login-button,
+  .login-google {
+    width: 100%;
+  }
+
+  /* botão do Google com espaçamento */
+  .login-google {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* cadastrar-se abaixo */
+  .subscribe {
+    margin-top: 15px;
+    text-align: center;
+  }
+}
+
+/* =========================
+   CELULARES (bem pequenos)
+========================= */
+@media (max-width: 480px) {
+  .login-title {
+    font-size: 1.5rem;
+  }
+
+  .login-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .login-content {
+    padding: 15px;
+  }
+
+  .login-button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}

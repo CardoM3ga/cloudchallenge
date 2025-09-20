@@ -1,0 +1,386 @@
+body{
+    background-color: #c1e7e7;
+}
+
+.content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.content_perfil {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.head {
+    width: 95%;
+    height: 300px;
+    margin: 0 auto;
+    border-radius: 16px ;
+    background-color: #f5f1dd;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 20px; /* afasta da barra de navegação */
+}
+
+.top_content_perfil {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #000;
+}
+
+.seta{
+    color: #000;
+}
+
+.seta:hover {
+    transform: scale(1.1);
+}
+
+.mid_content_perfil {
+    display: flex;
+    flex-direction: row;
+    color: #000;
+}
+
+.bot_content_perfil {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    color: #000;
+}
+
+button.share {
+    background-color: #e63946; /* vermelho rosado */
+    padding: 10px 20px;
+    border-radius: 40px;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+}
+
+.avatar {
+    width: 100px;
+}
+
+.avatar_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.name {
+    font-size: 50px;
+    margin-bottom: -5px;
+}
+
+.friends {
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.content_infos {
+    width: 95%;
+    margin: 20px auto;
+    background-color: #f5f1dd;
+    color: #707070;;
+    font-size: 30px;
+    font-weight: 600;
+    padding: 20px;
+    border-radius: 16px;
+}
+
+.infos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 60%;
+    margin: 40px auto;
+    gap: 20px;
+}
+
+.info_box {
+    background-color: rgba(42, 160, 218, 0.34);
+    border-radius: 16px;
+    text-align: center;
+    color: #707070;
+    padding: 20px;
+}
+
+.title {
+    padding: 10px;
+    font-size: 30px;
+}
+
+.data {
+    font-size: 100px;
+    font-weight: bold;
+}
+
+
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.3);
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+}
+
+.modal-content input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+}
+
+.modal-content button {
+  background: #0b00a5;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.close {
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.icon{
+    width: 10px;
+    margin-left: 15px;
+}
+
+.content_avatares {
+    width: 95%;
+    margin: 0 auto;
+    border-radius: 16px;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #707070;;
+    background-color: #f5f1dd;
+    padding: 20px;
+    font-size: 30px;
+}
+
+.avatars_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 12px;
+  margin-left: 20px;
+}
+
+.item_avatar {
+  background: rgba(200, 156, 0, 0.5);
+  width: 200px;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.item_avatar img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+.item_avatar .texto {
+  font-size: 26px;  
+}
+
+.item_avatar:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.notificacao {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 14px 24px;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: none;
+    z-index: 1000;
+    transition: opacity 0.4s ease;
+}
+
+.notificacao.sucesso {
+    background-color: #28a745; /* verde */
+    color: #fff;
+}
+
+.notificacao.erro {
+    background-color: #dc3545; /* vermelho */
+    color: #fff;
+}
+
+#inputNome {
+    font-size: 18px;
+    padding: 3px 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+/* Tablets e telas médias */
+@media (max-width: 1024px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content_perfil {
+        width: 95%;
+    }
+
+    .head {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+    }
+
+    .top_content_perfil, .mid_content_perfil, .bot_content_perfil {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .infos {
+        width: 80%;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .data {
+        font-size: 70px;
+    }
+
+    .area-pin input {
+        width: 80%;
+    }
+
+    .avatars_grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .item_avatar {
+        width: 150px;
+    }
+
+    .item_avatar img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .item_avatar .texto {
+        font-size: 20px;
+    }
+}
+
+/* Celulares e telas pequenas */
+@media (max-width: 600px) {
+    .content {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .content_perfil {
+        width: 100%;
+        margin: 0;
+    }
+
+    .head {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .top_content_perfil, .mid_content_perfil, .bot_content_perfil {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .name {
+        font-size: 36px;
+    }
+
+    .friends {
+        font-size: 18px;
+    }
+
+    .content_infos {
+        font-size: 24px;
+        padding: 15px;
+    }
+
+    .infos {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin: 20px auto;
+    }
+
+    .data {
+        font-size: 60px;
+    }
+
+    .avatars_grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        margin-left: 0;
+    }
+
+    .item_avatar {
+        width: 120px;
+        padding: 8px;
+    }
+
+    .item_avatar img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .item_avatar .texto {
+        font-size: 16px;
+    }
+
+    #inputNome {
+        width: 90%;
+    }
+}
