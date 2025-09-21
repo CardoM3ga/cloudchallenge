@@ -2,7 +2,7 @@
   "name": "CloudChallenge",
   "short_name": "CloudChallenge",
   "description": "Um jogo divertido de desafios nas nuvens",
-  "start_url": "/CloudChallenge/login.php",
+  "start_url": "/login.php",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#1E90FF",
@@ -19,4 +19,5 @@
     }
   ]
 }
+
 
