@@ -75,52 +75,40 @@ if ($input && strpos($input, 'google_email') !== false) {
 </head>
 <body>
 <div class="content">
-    <div class="left-side">
-        <div class="login-logo">
-            <div class="logo">
-                <img src="./assets/images/logo.png" alt="CloudChallenge Logo">
-            </div>
+        <!-- LADO ESQUERDO (logo e texto explicativo) -->
+        <div class="left-side">
+            <h1>Bem-vindo ao QuizTime</h1>
+            <p>Teste seus conhecimentos e desafie seus amigos!</p>
         </div>
-    </div>
 
-    <div class="right-side">
-        <div class="login-content">
-            <h1 class="login-title">CloudChallenge</h1>
-            <p class="login-subtitle">Faça login para continuar</p>
-            <div class="login-form">
-                <form action="login.php" method="post">
+        <!-- LADO DIREITO (formulário de login) -->
+        <div class="right-side">
+            <div class="login-content">
+                <h2 class="login-title">Login</h2>
+                <p class="login-subtitle">Entre com sua conta</p>
+                
+                <form class="login-form" method="POST" action="processa_login.php">
                     <div class="input-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" name="email" required>
                     </div>
                     <div class="input-group">
-                        <label for="password">Senha</label>
-                        <input type="password" id="password" name="password" required>
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" required>
                     </div>
+                    
                     <button type="submit" class="login-button">Entrar</button>
                 </form>
-                <p class="subscribe">Ainda não tem uma conta? <a href="subscribe.php">Cadastre-se</a></p>
-            </div>
-        </div>
 
-        <!-- Login Google -->
-        <div class="login-google">
-            <div id="g_id_onload"
-                 data-client_id="282009522215-ik4r5bkdb6ao7hed6q7am0mk553bnm7j.apps.googleusercontent.com"
-                 data-callback="handleCredentialResponse"
-                 data-auto_prompt="false">
+                <!-- Botão do Google -->
+                <button class="login-google">Login com Google</button>
+                
             </div>
-            <div class="g_id_signin"
-                 data-type="standard"
-                 data-shape="circle"
-                 data-theme="outline"
-                 data-text="sign_in_with"
-                 data-size="large"
-                 data-logo_alignment="center">
-            </div>
+            <div class="subscribe">
+                    <p>Não tem uma conta? <a href="register.php">Cadastrar-se</a></p>
+                </div>
         </div>
     </div>
-</div>
 
 <script>
 function parseJwt(token) {
@@ -232,3 +220,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && strpos(file_get_contents('php://inp
 </body>
 
 </html>
+
