@@ -80,7 +80,6 @@ if ($input && strpos($input, 'google_email') !== false) {
             <div class="logo">
                 <img src="./assets/images/logo.png" alt="CloudChallenge Logo">
             </div>
-            <p class="subscribe">Ainda não tem uma conta? <a href="subscribe.php">Cadastre-se</a></p>
         </div>
     </div>
 
@@ -100,6 +99,7 @@ if ($input && strpos($input, 'google_email') !== false) {
                     </div>
                     <button type="submit" class="login-button">Entrar</button>
                 </form>
+                <p class="subscribe">Ainda não tem uma conta? <a href="subscribe.php">Cadastre-se</a></p>
             </div>
         </div>
 
@@ -230,4 +230,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && strpos(file_get_contents('php://inp
 
 
 </body>
+
 </html>
