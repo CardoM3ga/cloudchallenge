@@ -119,6 +119,9 @@ if ($input && strpos($input, 'google_email') !== false) {
                  data-logo_alignment="center">
             </div>
         </div>
+        <div class="subscribe mobile-only">
+    <p>Não tem uma conta? <a href="register.php">Cadastrar-se</a></p>
+</div>
     </div>
 </div>
 
