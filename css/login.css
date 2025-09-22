@@ -10,7 +10,10 @@
     width: 100%;
     height: 100%;
     margin: 0 auto;
-   
+}
+
+.mobile-only {
+  display: none;
 }
 
 .left-side, .right-side {
@@ -118,21 +121,11 @@ form{
    RESPONSIVIDADE LOGIN
 ========================= */
 
-/* Tablets (até 1024px) */
-/* Melhorar alinhamento e espaçamento no mobile */
-/* Mantém o layout antigo por padrão */
-/* Seu CSS atual continua valendo */
-
-/* =========================
-   SOMENTE MOBILE SIMPLIFICADO
-========================= */
 @media (max-width: 768px) {
-  /* Remove o lado esquerdo (logo e texto) */
   .left-side {
     display: none;
   }
 
-  /* Centraliza só o formulário */
   .content {
     justify-content: center;
     align-items: center;
@@ -152,7 +145,6 @@ form{
     margin: 0;
   }
 
-  /* Botões e inputs ocupando largura total */
   .login-form,
   .input-group,
   .login-button,
@@ -160,21 +152,19 @@ form{
     width: 100%;
   }
 
-  /* Cadastrar-se abaixo do form */
   .subscribe {
     margin-top: 15px;
     text-align: center;
   }
 }
 
-
 @media (max-width: 480px) {
   .login-content {
-    margin: 0 10px; /* espaço lateral pra não encostar na borda */
+    margin: 0 10px;
   }
 
   .input-group input {
-    font-size: 0.9rem; /* letras mais ajustadas em celulares pequenos */
+    font-size: 0.9rem;
   }
 
   .login-button {
@@ -183,12 +173,10 @@ form{
   }
 }
 
-
 /* =========================
    MOBILE E TABLETS MÉDIOS
 ========================= */
 @media (max-width: 1024px) {
-  /* some com a logo em tablets e mobile */
   .left-side {
     display: none;
   }
@@ -207,13 +195,15 @@ form{
 
   .login-content {
     width: 100%;
-    max-width: 400px; /* limita pra não estourar */
+    max-width: 400px;
     padding: 20px;
     margin: 0;
-    text-align: center; /* centraliza título e subtítulo */
+    text-align: center;
+    display: flex;              /* 🔥 vira flexbox */
+    flex-direction: column;     /* 🔥 empilha elementos */
+    align-items: center;
   }
 
-  /* garante que o título nunca quebre a caixa */
   .login-title {
     font-size: 1.8rem;
     word-wrap: break-word;
@@ -224,7 +214,6 @@ form{
     font-size: 1rem;
   }
 
-  /* inputs e botões 100% */
   .login-form,
   .input-group,
   .login-button,
@@ -232,17 +221,29 @@ form{
     width: 100%;
   }
 
-  /* botão do Google com espaçamento */
   .login-google {
     margin-top: 15px;
     display: flex;
     justify-content: center;
+    order: 2; /* botão Google em 2º */
   }
 
-  /* cadastrar-se abaixo */
   .subscribe {
     margin-top: 15px;
     text-align: center;
+    order: 3; /* 🔥 cadastrar-se abaixo do Google */
+    width: 100%;
+  }
+
+  .login-form {
+    order: 1; /* form em 1º */
+  }
+  .mobile-only {
+    display: block;
+  }
+  /* e escondemos a versão que está na left-side */
+  .left-side .subscribe {
+    display: none;
   }
 }
 
